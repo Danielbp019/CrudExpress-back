@@ -1,0 +1,2 @@
+### Recuperar todo
+GET http://localhost:3000/todo
