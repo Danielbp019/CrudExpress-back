@@ -7,7 +7,8 @@ app.use(json())
 app.use(corsMiddleware())
 app.disable('x-powered-by')
 
-app.use(articuloRouter)//Usar las rutas importadas
+//Usar las rutas importadas, '/api' prefijo para que la ruta se vea mejor
+app.use('/api', articuloRouter)
 
 //Ruta para manejo del error de la direccion sin ruta.
 app.use((req, res) => {
@@ -15,7 +16,7 @@ app.use((req, res) => {
 })
 
 //Servidor
-const PORT = process.env.PORT ?? 3000
+const PORT = process.env.PORT ?? 8000
 app.listen(PORT, () => {
     console.log(`server listening on port http://localhost:${PORT}`)
 })

@@ -1,39 +1,20 @@
-import mysql from 'mysql2/promise'
+import mysql from 'mysql2/promise';
 
-const DEFAULT_CONFIG = {
+// Crear la conexión a la base de datos
+const pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
-    port: 3306,
     password: '',
-    database: 'crud'
-}
-const connectionString = process.env.DATABASE_URL ?? DEFAULT_CONFIG
-const connection = await mysql.createConnection(connectionString)
+    database: 'crud',
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
+});
 
-//Modelo
 export class ArticuloModel {
 
-    static async getAll() {
-        const result = await connection.query(
-            'SELECT * FROM articulos'
-        )
-        console.log(result)
-        return result;
+    static async query(sql, params) {
+        const datos = await pool.execute(sql, params);
+        return datos;
     }
-
-    /*     static async getById({ id }) {
-            
-        }
-    
-        static async create({ input }) {
-            
-        }
-    
-        static async delete({ id }) {
-            
-        }
-    
-        static async update({ id, input }) {
-            
-        } */
 }
