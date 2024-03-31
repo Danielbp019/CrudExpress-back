@@ -6,4 +6,5 @@ export const articuloRouter = Router()//Se exporta y se declara la clase al mism
 //Siempre que se llaman rutas de este archivo comienzan con la constante articuloRouter.(tipo de ruta)
 articuloRouter.get('/', (req, res) => res.send('Ruta get del hola desde node y express js'))
 
-articuloRouter.get('/articulos', ArticuloController.getAll)
+articuloRouter.get('/articulos', ArticuloController.getArticulos)
+articuloRouter.post('/articulos', ArticuloController.postCreateArticulos)

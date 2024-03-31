@@ -3,7 +3,11 @@ import { corsMiddleware } from './middlewares/cors.js'
 import { articuloRouter } from './routes/ArticuloRouter.js'//Se importa la clase del archivo routes, para usar las rutas.
 
 const app = express()
-app.use(json())
+
+// parse application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
+// parse application/json
+app.use(json());
 app.use(corsMiddleware())
 app.disable('x-powered-by')
 
