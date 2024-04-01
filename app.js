@@ -1,6 +1,7 @@
 import express, { json } from 'express'
 import { corsMiddleware } from './middlewares/cors.js'
-import { articuloRouter } from './routes/ArticuloRouter.js'//Se importa la clase del archivo routes, para usar las rutas.
+import { articuloRouter } from './routes/ArticuloRouter.js'// Se importa la clase del archivo routes, para usar las rutas.
+import { PORT } from './config.js' // Se importa el puerto del servidor
 
 const app = express()
 
