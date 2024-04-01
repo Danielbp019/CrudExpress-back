@@ -6,7 +6,7 @@ export class ArticuloController {
         try {
             const [datos] = await ArticuloModel.query(
                 "SELECT id ,titulo ,cuerpo ,autor ,created_at ,updated_at FROM articulos;")
-                
+
             res.json(datos);
         } catch (error) {
             res.status(500).json({ error: 'Ha ocurrido un error al obtener los artículos' })
@@ -75,4 +75,5 @@ export class ArticuloController {
             res.status(500).json({ error: 'Ha ocurrido un error al obtener el artículo' })
         }
     }
+
 }

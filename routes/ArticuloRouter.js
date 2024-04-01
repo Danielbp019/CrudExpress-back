@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import { ArticuloController } from '../controllers/ArticuloController.js'
+import { validateArticulo } from '../middlewares/validateArticulo.js';
 
 export const articuloRouter = Router()// Se exporta y se declara la clase al mismo tiempo con este codigo
 
@@ -11,8 +12,8 @@ articuloRouter.get('/articulos', ArticuloController.getArticulos)
 // GET uno solo
 articuloRouter.get('/articulos/:id?', ArticuloController.getbyidArticulos)
 // POST articulos
-articuloRouter.post('/articulos', ArticuloController.postCreateArticulos)
+articuloRouter.post('/articulos', validateArticulo, ArticuloController.postCreateArticulos)
 // DELETE articulos
 articuloRouter.delete('/articulos/:id?', ArticuloController.DeleteArticulos)
 // PUT articulos
-articuloRouter.put('/articulos/:id?', ArticuloController.putArticulos);
+articuloRouter.put('/articulos/:id?', validateArticulo, ArticuloController.putArticulos);
