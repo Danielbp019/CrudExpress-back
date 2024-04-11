@@ -36,7 +36,7 @@ export class ArticuloController {
             const [datos] = await ArticuloModel.query(
                 "INSERT INTO articulos (titulo ,cuerpo ,autor) VALUES (?, ?, ?)", [titulo, cuerpo, autor])
 
-            res.status(201).json({ id: datos.insertId, titulo, cuerpo, autor })
+            res.status(201).json({ message: "Articulo creado", id: datos.insertId, titulo, cuerpo, autor })
         } catch (error) {
             res.status(500).json({ error: 'Ha ocurrido un error al crear el artículo' })
         }
@@ -52,7 +52,7 @@ export class ArticuloController {
             if (datos.affectedRows === 0) {
                 return res.status(404).json({ message: "No se encontro el articulo" })
             }
-            res.status(200).json({ message: "Articulo editado" })
+            res.status(200).json({ message: "Articulo editado", id: parseInt(id), titulo, cuerpo, autor })
 
         } catch (error) {
             res.status(500).json({ error: 'Ha ocurrido un error al editar el artículo' })
