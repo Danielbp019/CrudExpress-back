@@ -15,3 +15,23 @@ Levantar el servidor node --watch
 ```sh
 npm run start
 ```
+
+Rutas de peticiones:
+```sh
+GET: http://localhost:8000/api/articulos
+POST: http://localhost:8000/api/articulos
+PUT: http://localhost:8000/api/articulos/1/
+DELETE: http://localhost:8000/api/articulos/1
+```
+
+SQL de la tabla:
+```sh
+CREATE TABLE articulos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(255),
+    cuerpo TEXT,
+    autor VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+```
