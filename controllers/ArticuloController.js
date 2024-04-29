@@ -101,7 +101,7 @@ export class ArticuloController {
             if (datos.affectedRows === 0) {
                 return res.status(404).json({ message: "No se encontro el articulo" })
             }
-            res.status(200).json({ message: "Articulo eliminado" })
+            res.status(204).json({ message: "Articulo eliminado" })
         } catch (error) {
             res.status(500).json({ error: 'Ha ocurrido un error al obtener el artículo' })
         }
