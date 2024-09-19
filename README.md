@@ -5,6 +5,7 @@ Instala las dependencias utilizando npm (Node Package Manager):
 ```sh
 npm install
 ```
+Crea el archivo .env a partir del ejemplo.
 
 Levantar el servidor desarrollo
 ```sh
