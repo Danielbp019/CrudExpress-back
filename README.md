@@ -18,10 +18,11 @@ npm run start
 
 Rutas de peticiones:
 ```sh
-GET: http://localhost:8000/api/articulos
-POST: http://localhost:8000/api/articulos
-PUT: http://localhost:8000/api/articulos/1/
-DELETE: http://localhost:8000/api/articulos/1
+GET:       http://localhost:8000/api/articulos
+GET ID:    http://localhost:8000/api/articulos/1
+POST:      http://localhost:8000/api/articulos
+PUT:       http://localhost:8000/api/articulos/1/
+DELETE:    http://localhost:8000/api/articulos/1
 ```
 
 SQL de la tabla:
